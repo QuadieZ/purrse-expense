@@ -27,7 +27,7 @@ export const semanticColorTokens = defineTokens({
             muted: { value: "{colors.brand.100}" },
             subtle: { value: "{colors.brand.200}" },
             emphasized: { value: "{colors.accent.500}" },
-            focusRing: { value: "{colors.accent.300}" },
+            focusRing: { value: "{colors.accent.500}" },
         }
     }
 })

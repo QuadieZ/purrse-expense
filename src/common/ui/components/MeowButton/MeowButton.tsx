@@ -101,7 +101,8 @@ export const MeowButton = (props: MeowButtonProps) => {
       {...rest}
       asChild={!!href}
       width={fullWidth ? '100%' : 'fit-content'}
-      focusRingColor="brand.accent">
+      focusRingColor="brandPalette.focusRing"
+      fontWeight="semibold">
       <ButtonLinkContainer
         href={href}
         isDisabled={isDisabled}>

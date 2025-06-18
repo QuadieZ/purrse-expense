@@ -1,0 +1,24 @@
+import { defineTokens } from "@chakra-ui/react";
+
+export const semanticColorTokens = defineTokens({
+    colors: {
+        brand: {
+            primary: { value: "{colors.brand.500}" },
+            primaryHover: { value: "{colors.brand.400}" },
+            secondary: { value: "{colors.brand.200}" },
+            secondaryHover: { value: "{colors.brand.300}" },
+            light: { value: "{colors.brand.100}" },
+            accent: { value: "{colors.accent.500}" },
+            accentHover: { value: "{colors.accent.400}" },
+            accentLight: { value: "{colors.accent.300}" },
+        },
+        background: {
+            primary: { value: "{colors.brand.50}" },
+            brand: { value: "{colors.brand.500}" },
+        },
+        text: {
+            primary: { value: "#211a1d" },
+            contrast: { value: "{colors.brand.50}" },
+        }
+    }
+})

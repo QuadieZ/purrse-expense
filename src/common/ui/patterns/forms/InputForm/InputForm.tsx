@@ -20,7 +20,8 @@ export const InputForm = (props: InputFormProps) => {
   return (
     <Field.Root
       required
-      invalid={!!errorMessage}>
+      invalid={!!errorMessage}
+      w="100%">
       <HStack
         gap={4}
         alignItems="flex-start">
@@ -39,6 +40,7 @@ export const InputForm = (props: InputFormProps) => {
             value={value}
             onChange={handleChange}
             colorPalette="brandPalette"
+            w="100%"
             {...rest}
           />
           {errorMessage && <Field.ErrorText color="red">{errorMessage}</Field.ErrorText>}

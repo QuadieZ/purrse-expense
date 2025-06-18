@@ -1,3 +1,4 @@
+import '@fontsource-variable/quicksand/index.css';
 import type { Preview } from '@storybook/react-vite';
 import React from 'react';
 import { MeowKitProvider } from '../src/app/providers/MeowKitProvider';

@@ -19,6 +19,15 @@ export const semanticColorTokens = defineTokens({
         text: {
             primary: { value: "#211a1d" },
             contrast: { value: "{colors.brand.50}" },
+        },
+        brandPalette: {
+            solid: { value: "{colors.brand.500}" },
+            contrast: { value: "{colors.brand.50}" },
+            fg: { value: "{colors.brand.500}" },
+            muted: { value: "{colors.brand.100}" },
+            subtle: { value: "{colors.brand.200}" },
+            emphasized: { value: "{colors.accent.500}" },
+            focusRing: { value: "{colors.accent.300}" },
         }
     }
 })

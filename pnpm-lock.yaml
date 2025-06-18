@@ -17,6 +17,12 @@ importers:
       '@fontsource-variable/quicksand':
         specifier: ^5.2.8
         version: 5.2.8
+      '@storybook/addon-themes':
+        specifier: ^9.0.12
+        version: 9.0.12(storybook@9.0.12(@testing-library/dom@10.4.0)(prettier@3.5.3))
+      lucide-react:
+        specifier: ^0.517.0
+        version: 0.517.0(react@19.1.0)
       path:
         specifier: ^0.12.7
         version: 0.12.7
@@ -695,6 +701,11 @@ packages:
 
   '@storybook/addon-docs@9.0.12':
     resolution: {integrity: sha512-bAuFy4BWGEBIC0EAS4N+V8mHj7NZiSdDnJUSr4Al3znEVzNHLpQAMRznkga2Ok8x+gwcyBG7W47dLbDXVqLZDg==}
+    peerDependencies:
+      storybook: ^9.0.12
+
+  '@storybook/addon-themes@9.0.12':
+    resolution: {integrity: sha512-Pp2RYhHGjkMcmkDYuUCSoJ6FgEbWPC3LdyedXiyyaY7p93dWWIRn2ZeXsYxSi71RYYvnbijulShjYwfzBbCeDQ==}
     peerDependencies:
       storybook: ^9.0.12
 
@@ -1846,6 +1857,11 @@ packages:
 
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
+
+  lucide-react@0.517.0:
+    resolution: {integrity: sha512-TQCwwbwIuVG6SSutUC2Ol6PRXcuZndqoVAnDa7S7xb/RWPaiKTvLwX7byUKeh0pUgvtFh0NZZwFIDuMSeB7Iwg==}
+    peerDependencies:
+      react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
   lz-string@1.5.0:
     resolution: {integrity: sha512-h5bgJWpxJNswbU7qCrV0tIKQCaS3blPDrqKWx+QxzuzL1zGUzij9XCWLrSLsJPu5t+eWA/ycetzYAO5IOMcWAQ==}
@@ -3081,6 +3097,11 @@ snapshots:
       ts-dedent: 2.2.0
     transitivePeerDependencies:
       - '@types/react'
+
+  '@storybook/addon-themes@9.0.12(storybook@9.0.12(@testing-library/dom@10.4.0)(prettier@3.5.3))':
+    dependencies:
+      storybook: 9.0.12(@testing-library/dom@10.4.0)(prettier@3.5.3)
+      ts-dedent: 2.2.0
 
   '@storybook/builder-vite@9.0.12(storybook@9.0.12(@testing-library/dom@10.4.0)(prettier@3.5.3))(vite@6.3.5(@types/node@24.0.3))':
     dependencies:
@@ -4578,6 +4599,10 @@ snapshots:
   lru-cache@5.1.1:
     dependencies:
       yallist: 3.1.1
+
+  lucide-react@0.517.0(react@19.1.0):
+    dependencies:
+      react: 19.1.0
 
   lz-string@1.5.0: {}
 

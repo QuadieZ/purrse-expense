@@ -12,12 +12,15 @@
     "build-storybook": "storybook build",
     "test": "vitest",
     "test:coverage": "vitest run --coverage",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "typegen:ui": "npx @chakra-ui/cli typegen ./src/common/ui/styles/theme.ts"
   },
   "dependencies": {
     "@chakra-ui/react": "^3.21.0",
     "@emotion/react": "^11.14.0",
     "@fontsource-variable/quicksand": "^5.2.8",
+    "@storybook/addon-themes": "^9.0.12",
+    "lucide-react": "^0.517.0",
     "path": "^0.12.7",
     "prettier": "^3.5.3",
     "react": "^19.1.0",

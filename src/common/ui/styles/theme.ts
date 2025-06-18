@@ -8,7 +8,8 @@ const meowKitTheme = defineConfig({
             margin: 0,
             padding: 0,
             fontFamily: "Quicksand Variable, Tahoma, system-ui, sans-serif",
-            bg: "background.primary"
+            bg: "background.primary",
+            color: "text.primary"
         },
     },
     theme: {
@@ -21,4 +22,5 @@ const meowKitTheme = defineConfig({
     }
 })
 
-export const meowKitSystem = createSystem(defaultConfig, meowKitTheme)
+const meowKitSystem = createSystem(defaultConfig, meowKitTheme)
+export default meowKitSystem;

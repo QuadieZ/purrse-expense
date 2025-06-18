@@ -1,4 +1,4 @@
-import { meowKitSystem } from '@/common/ui/styles/theme';
+import meowKitSystem from '@/common/ui/styles/theme';
 import { ChakraProvider } from '@chakra-ui/react';
 
 export type MeowKitProviderProps = {

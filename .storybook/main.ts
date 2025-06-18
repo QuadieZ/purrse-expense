@@ -1,13 +1,7 @@
 import type { StorybookConfig } from '@storybook/react-vite';
 
 const config: StorybookConfig = {
-  "stories": [
-    {
-      directory: '../src/components',
-      files: '*.stories.*',
-      titlePrefix: 'MeowKit',
-    },
-  ],
+  "stories": ['../src/common/ui/**/*.stories.tsx'],
   "addons": [
     "@chromatic-com/storybook",
     "@storybook/addon-docs"

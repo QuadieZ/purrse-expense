@@ -1,4 +1,6 @@
 import type { Preview } from '@storybook/react-vite';
+import React from 'react';
+import { MeowKitProvider } from '../src/app/providers/MeowKitProvider';
 
 const preview: Preview = {
   parameters: {
@@ -10,6 +12,13 @@ const preview: Preview = {
     },
   },
   tags: ['autodocs'],
+  decorators: [
+    (Story) => (
+      <MeowKitProvider>
+        <Story />
+      </MeowKitProvider>
+    ),
+  ],
 };
 
 export default preview;

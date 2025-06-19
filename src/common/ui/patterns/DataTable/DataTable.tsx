@@ -25,17 +25,18 @@ import {
 import { ArrowDownNarrowWide, ArrowDownUp, ArrowUpNarrowWide, ChevronLeft, ChevronRight, Search } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 
-const PAGE_SIZE = 10;
+const PAGE_SIZE = 8;
 export type DataTableProps<T> = {
   columns: ColumnDef<T>[];
   data: T[];
   customTableProps?: TableRootProps;
   setSelectedRows: (rows: T[]) => void;
   emptyStateElement?: React.ReactNode;
+  highlightRowCondition?: (row: T) => boolean;
 };
 
 export const DataTable = <T extends { id: string }>(props: DataTableProps<T>) => {
-  const { columns, data, customTableProps, setSelectedRows, emptyStateElement } = props;
+  const { columns, data, customTableProps, setSelectedRows, emptyStateElement, highlightRowCondition } = props;
 
   const inputRef = useRef<HTMLInputElement>(null);
   const [globalFilter, setGlobalFilter] = useState('');
@@ -118,7 +119,9 @@ export const DataTable = <T extends { id: string }>(props: DataTableProps<T>) =>
   });
 
   return (
-    <Stack gap={4}>
+    <Stack
+      gap={4}
+      h="100%">
       <InputGroup
         startElement={<Search size="14px" />}
         endElement={endElement}
@@ -133,57 +136,67 @@ export const DataTable = <T extends { id: string }>(props: DataTableProps<T>) =>
           ref={inputRef}
         />
       </InputGroup>
-      <Table.Root
-        variant="outline"
-        tableLayout="fixed"
-        {...customTableProps}>
-        <Table.Header>
-          {table.getHeaderGroups().map((headerGroup) => (
-            <Table.Row key={headerGroup.id}>
-              {headerGroup.headers.map((header) => (
-                <Table.ColumnHeader
-                  fontWeight="bold"
-                  key={header.id}
-                  onClick={header.column.getToggleSortingHandler()}
-                  cursor={header.column.getCanSort() ? 'pointer' : 'default'}
-                  w={header.column.getSize()}>
-                  <Flex
-                    align="center"
-                    gap={2}>
-                    {flexRender(header.column.columnDef.header, header.getContext())}
-                    {{
-                      asc: <ArrowUpNarrowWide size="16px" />,
-                      desc: <ArrowDownNarrowWide size="16px" />,
-                    }[header.column.getIsSorted() as SortDirection] ??
-                      (header.column.getCanSort() ? <ArrowDownUp size="16px" /> : null)}
-                  </Flex>
-                </Table.ColumnHeader>
-              ))}
-            </Table.Row>
-          ))}
-        </Table.Header>
-        <Table.Body bg="white">
-          {data.length === 0 ? (
-            <Table.Row>
-              <Table.Cell
-                py={6}
-                colSpan={columns.length + 1}
-                textAlign="center"
-                justifyItems="center">
-                {emptyStateElement}
-              </Table.Cell>
-            </Table.Row>
-          ) : (
-            table.getRowModel().rows.map((row) => (
-              <Table.Row key={row.id}>
-                {row.getVisibleCells().map((cell) => (
-                  <Table.Cell key={cell.id}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</Table.Cell>
+      <Table.ScrollArea
+        borderWidth="1px"
+        rounded="md"
+        maxH="100%">
+        <Table.Root
+          stickyHeader
+          variant="outline"
+          tableLayout="fixed"
+          {...customTableProps}>
+          <Table.Header>
+            {table.getHeaderGroups().map((headerGroup) => (
+              <Table.Row
+                key={headerGroup.id}
+                bg="gray.100">
+                {headerGroup.headers.map((header) => (
+                  <Table.ColumnHeader
+                    fontWeight="bold"
+                    key={header.id}
+                    onClick={header.column.getToggleSortingHandler()}
+                    cursor={header.column.getCanSort() ? 'pointer' : 'default'}
+                    w={header.column.getSize()}>
+                    <Flex
+                      align="center"
+                      gap={2}>
+                      {flexRender(header.column.columnDef.header, header.getContext())}
+                      {{
+                        asc: <ArrowUpNarrowWide size="16px" />,
+                        desc: <ArrowDownNarrowWide size="16px" />,
+                      }[header.column.getIsSorted() as SortDirection] ??
+                        (header.column.getCanSort() ? <ArrowDownUp size="16px" /> : null)}
+                    </Flex>
+                  </Table.ColumnHeader>
                 ))}
               </Table.Row>
-            ))
-          )}
-        </Table.Body>
-      </Table.Root>
+            ))}
+          </Table.Header>
+          <Table.Body bg="white">
+            {data.length === 0 ? (
+              <Table.Row>
+                <Table.Cell
+                  py={6}
+                  colSpan={columns.length + 1}
+                  textAlign="center"
+                  justifyItems="center">
+                  {emptyStateElement}
+                </Table.Cell>
+              </Table.Row>
+            ) : (
+              table.getRowModel().rows.map((row) => (
+                <Table.Row
+                  key={row.id}
+                  bg={highlightRowCondition?.(row.original) ? 'brand.accentLight' : 'white'}>
+                  {row.getVisibleCells().map((cell) => (
+                    <Table.Cell key={cell.id}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</Table.Cell>
+                  ))}
+                </Table.Row>
+              ))
+            )}
+          </Table.Body>
+        </Table.Root>
+      </Table.ScrollArea>
       <Pagination.Root
         w="100%"
         count={data.length}

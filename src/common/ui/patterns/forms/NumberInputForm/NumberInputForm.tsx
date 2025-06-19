@@ -37,7 +37,7 @@ export const NumberInputForm = (props: NumberInputFormProps) => {
             w="100%"
             required={isRequired}
             value={value?.toString()}
-            onValueChange={(details) => onChange?.(parseInt(details.value))}
+            onValueChange={(details) => onChange?.(parseInt(details.value) ?? 0)}
             {...rest}>
             <NumberInput.Control />
             <NumberInput.Input />

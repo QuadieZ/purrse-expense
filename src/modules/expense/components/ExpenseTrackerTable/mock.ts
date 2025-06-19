@@ -11,25 +11,32 @@ export const mockExpenses: ExpenseItem[] = [
     {
         id: uuidv4(),
         name: 'Expense 2',
-        amount: 200,
-        category: 'food',
+        amount: 100,
+        category: 'accessory'
     },
     {
         id: uuidv4(),
         name: 'Expense 3',
-        amount: 300,
-        category: 'food',
+        amount: 100,
+        category: 'furniture',
     },
     {
         id: uuidv4(),
         name: 'Expense 4',
-        amount: 400,
+        amount: 100,
         category: 'food',
     },
     {
         id: uuidv4(),
         name: 'Expense 5',
-        amount: 500,
+        amount: 100,
         category: 'food',
     },
+    {
+        id: uuidv4(),
+        name: 'Expense 6',
+        amount: 100,
+        category: 'furniture',
+    }
+
 ];

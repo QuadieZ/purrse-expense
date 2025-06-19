@@ -11,6 +11,7 @@ export const baseColorTokens = defineTokens({
             500: { value: "#f08080" },
         },
         accent: {
+            200: { value: "#edfff9" },
             300: { value: "#e1fdf3" },
             400: { value: "#c3edde" },
             500: { value: "#89e4c5" },

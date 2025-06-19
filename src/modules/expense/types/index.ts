@@ -19,3 +19,7 @@ export type ExpenseItem = {
     category: Expense;
     amount: number;
 };
+
+export type ExpenseTableItem = ExpenseItem & {
+    isHighlighted: boolean;
+};

@@ -3,34 +3,37 @@ import { DataTable } from '../../../../common/ui';
 import { ExpenseTrackerTableActions, ExpenseTrackerTableHeader } from '../../components';
 import { EmptyStateElement } from '../../components/ExpenseTrackerTable/EmptyStateElement';
 import { useExpenseStore } from '../../stores/expenseStore';
-import { EXPENSE_LABELS, type ExpenseItem } from '../../types';
 import { expenseColumns } from './columnDef';
 
 export const ExpenseTrackerTablePage = () => {
-  const { expenses, setSelectedExpenses, selectedExpenses } = useExpenseStore();
+  const { expenses, setSelectedExpenses, selectedExpenses, isMostSpentCategory } = useExpenseStore();
 
   console.log(selectedExpenses);
   return (
     <Stack
       px={16}
-      gap={8}>
+      gap={8}
+      overflow="hidden"
+      flex={1}>
       <Stack>
         <ExpenseTrackerTableHeader />
         <ExpenseTrackerTableActions />
       </Stack>
-      <Stack>
+      <Stack
+        flex={1}
+        overflow="hidden"
+        px={2}>
         <DataTable
           columns={expenseColumns}
-          data={
-            expenses.map((expense) => ({
-              ...expense,
-              category: EXPENSE_LABELS[expense.category],
-            })) as ExpenseItem[]
-          }
+          data={expenses}
           setSelectedRows={(rows) => {
             setSelectedExpenses(rows.map((row) => row.id));
           }}
           emptyStateElement={<EmptyStateElement />}
+          highlightRowCondition={(row) => {
+            console.log(row);
+            return isMostSpentCategory[row.category];
+          }}
         />
       </Stack>
     </Stack>

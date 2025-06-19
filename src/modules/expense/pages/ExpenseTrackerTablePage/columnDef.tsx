@@ -1,5 +1,5 @@
 import type { ColumnDef } from '@tanstack/react-table';
-import type { ExpenseItem } from '../../types';
+import { EXPENSE_LABELS, type ExpenseItem } from '../../types';
 
 export const expenseColumns: ColumnDef<ExpenseItem>[] = [
   {
@@ -9,6 +9,10 @@ export const expenseColumns: ColumnDef<ExpenseItem>[] = [
   {
     accessorKey: 'category',
     header: 'Category',
+    cell: ({ row }) => {
+      const categoryValue = row.original.category;
+      return EXPENSE_LABELS[categoryValue];
+    },
   },
   {
     accessorKey: 'amount',

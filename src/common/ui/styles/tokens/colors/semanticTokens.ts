@@ -10,7 +10,7 @@ export const semanticColorTokens = defineTokens({
             light: { value: "{colors.brand.100}" },
             accent: { value: "{colors.accent.500}" },
             accentHover: { value: "{colors.accent.400}" },
-            accentLight: { value: "{colors.accent.300}" },
+            accentLight: { value: "{colors.accent.200}" },
         },
         background: {
             primary: { value: "{colors.brand.50}" },

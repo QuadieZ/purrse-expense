@@ -1,10 +1,11 @@
-import { ExpenseTrackerTablePage } from '@/modules';
 import { Image, Stack } from '@chakra-ui/react';
+import { ExpenseTrackerTablePage } from '../modules';
 
 function App() {
   return (
     <Stack
       w="100vw"
+      maxH="100vh"
       h="100vh"
       gap={0}
       px={8}
@@ -18,8 +19,9 @@ function App() {
       />
       <Stack
         w="100%"
-        h="100%"
-        p={4}>
+        overflow="hidden"
+        flex={1}
+        pb={4}>
         <ExpenseTrackerTablePage />
       </Stack>
     </Stack>

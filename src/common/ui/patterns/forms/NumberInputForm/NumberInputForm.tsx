@@ -7,7 +7,7 @@ export type NumberInputFormProps = {
   onChange?: (value: number) => void;
   labelWidth?: string;
   errorMessage?: string;
-} & Omit<NumberInputRootProps, 'value' | 'onValueChange'>;
+} & Omit<NumberInputRootProps, 'value' | 'onValueChange' | 'onChange'>;
 
 export const NumberInputForm = (props: NumberInputFormProps) => {
   const { label, isRequired, value, onChange, labelWidth, errorMessage, defaultValue = 0, ...rest } = props;
@@ -19,6 +19,7 @@ export const NumberInputForm = (props: NumberInputFormProps) => {
       invalid={!!errorMessage}>
       <HStack
         gap={4}
+        w="100%"
         alignItems="flex-start">
         <Field.Label
           mt={2}
@@ -26,7 +27,7 @@ export const NumberInputForm = (props: NumberInputFormProps) => {
           w={labelWidth ?? 'fit-content'}>
           {label} {isRequired && <Field.RequiredIndicator />}
         </Field.Label>
-        <Stack>
+        <Stack w="100%">
           <NumberInput.Root
             bg="white"
             min={0}

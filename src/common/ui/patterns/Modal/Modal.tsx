@@ -1,4 +1,4 @@
-import { Button, CloseButton, Dialog, Portal, type DialogRootProps } from '@chakra-ui/react';
+import { CloseButton, Dialog, Portal, type DialogRootProps } from '@chakra-ui/react';
 
 export type ModalProps = {
   open: boolean;
@@ -32,11 +32,7 @@ export const Modal = (props: ModalProps) => {
             <Dialog.Body>{children}</Dialog.Body>
             <Dialog.Footer>
               {secondaryCta}
-              {primaryCta && (
-                <Dialog.ActionTrigger asChild>
-                  <Button>{primaryCta}</Button>
-                </Dialog.ActionTrigger>
-              )}
+              {primaryCta}
             </Dialog.Footer>
             <Dialog.CloseTrigger asChild>
               <CloseButton size="sm" />

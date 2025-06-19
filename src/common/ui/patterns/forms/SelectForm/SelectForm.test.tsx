@@ -1,5 +1,4 @@
 import { render } from '@/test/utils/customRender';
-import { createListCollection } from '@chakra-ui/react';
 import { screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 import { SelectForm, type SelectFormProps, type SelectOption } from './SelectForm';
@@ -15,7 +14,6 @@ const defaultProps: SelectFormProps = {
   value: [],
   onChange: vi.fn(),
   placeholder: 'Select an option',
-  collection: createListCollection({ items: options }),
 };
 
 describe('SelectForm', () => {

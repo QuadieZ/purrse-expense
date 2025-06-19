@@ -10,6 +10,7 @@ export type MeowButtonProps = {
   isDisabled?: boolean;
   href?: string;
   fullWidth?: boolean;
+  enableHoverAnimation?: boolean;
 } & Omit<ButtonProps, 'children' | 'disabled' | 'variant'>;
 
 const commonProps: ButtonProps = {
@@ -91,7 +92,7 @@ const ButtonLinkContainer = chakra(
 );
 
 export const MeowButton = (props: MeowButtonProps) => {
-  const { label, icon, isDisabled, href, fullWidth, variant = 'primary', ...rest } = props;
+  const { label, icon, isDisabled, href, fullWidth, variant = 'primary', enableHoverAnimation = true, ...rest } = props;
 
   return (
     <BaseButton
@@ -102,7 +103,15 @@ export const MeowButton = (props: MeowButtonProps) => {
       asChild={!!href}
       width={fullWidth ? '100%' : 'fit-content'}
       focusRingColor="brandPalette.focusRing"
-      fontWeight="semibold">
+      fontWeight="semibold"
+      transition="all 0.2s ease-in-out"
+      _hover={
+        enableHoverAnimation
+          ? {
+              transform: 'translateY(-2px)',
+            }
+          : {}
+      }>
       <ButtonLinkContainer
         href={href}
         isDisabled={isDisabled}>

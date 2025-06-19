@@ -17,7 +17,7 @@ export type SelectFormProps = {
   errorMessage?: string;
   placeholder?: string;
   isModal?: boolean;
-} & SelectRootProps;
+} & Omit<SelectRootProps, 'value' | 'onValueChange' | 'onChange' | 'collection'>;
 
 const Wrapper = ({ isModal, children }: { isModal: boolean; children: React.ReactNode }) =>
   isModal ? <>{children}</> : <Portal>{children}</Portal>;
@@ -46,6 +46,7 @@ export const SelectForm = (props: SelectFormProps) => {
       invalid={!!errorMessage}>
       <HStack
         gap={4}
+        w="100%"
         alignItems="flex-start">
         <Field.Label
           mt={2}
@@ -53,7 +54,7 @@ export const SelectForm = (props: SelectFormProps) => {
           w={labelWidth ?? 'fit-content'}>
           {label} {isRequired && <Field.RequiredIndicator />}
         </Field.Label>
-        <Stack>
+        <Stack w="100%">
           <Select.Root
             width="100%"
             minW="200px"

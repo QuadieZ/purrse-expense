@@ -3,7 +3,7 @@ import { Field, HStack, Input, Stack, type InputProps } from '@chakra-ui/react';
 export type InputFormProps = {
   label?: string;
   isRequired?: boolean;
-  placeholder: string;
+  placeholder?: string;
   value: string;
   onChange: (value: string) => void;
   labelWidth?: string;
@@ -24,6 +24,7 @@ export const InputForm = (props: InputFormProps) => {
       w="100%">
       <HStack
         gap={4}
+        w="100%"
         alignItems="flex-start">
         {label && (
           <Field.Label
@@ -33,7 +34,7 @@ export const InputForm = (props: InputFormProps) => {
             {label} {isRequired && <Field.RequiredIndicator />}
           </Field.Label>
         )}
-        <Stack>
+        <Stack w="100%">
           <Input
             background="white"
             placeholder={placeholder}

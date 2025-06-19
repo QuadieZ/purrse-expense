@@ -31,10 +31,11 @@ export type DataTableProps<T> = {
   data: T[];
   customTableProps?: TableRootProps;
   setSelectedRows: (rows: T[]) => void;
+  emptyStateElement?: React.ReactNode;
 };
 
 export const DataTable = <T extends { id: string }>(props: DataTableProps<T>) => {
-  const { columns, data, customTableProps, setSelectedRows } = props;
+  const { columns, data, customTableProps, setSelectedRows, emptyStateElement } = props;
 
   const inputRef = useRef<HTMLInputElement>(null);
   const [globalFilter, setGlobalFilter] = useState('');
@@ -132,15 +133,13 @@ export const DataTable = <T extends { id: string }>(props: DataTableProps<T>) =>
       </InputGroup>
       <Table.Root
         variant="outline"
-        colorPalette="brandPalette"
         tableLayout="fixed"
         {...customTableProps}>
-        <Table.Header bg="brand.primary">
+        <Table.Header>
           {table.getHeaderGroups().map((headerGroup) => (
             <Table.Row key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
                 <Table.ColumnHeader
-                  color="white"
                   fontWeight="bold"
                   key={header.id}
                   onClick={header.column.getToggleSortingHandler()}
@@ -162,13 +161,25 @@ export const DataTable = <T extends { id: string }>(props: DataTableProps<T>) =>
           ))}
         </Table.Header>
         <Table.Body bg="white">
-          {table.getRowModel().rows.map((row) => (
-            <Table.Row key={row.id}>
-              {row.getVisibleCells().map((cell) => (
-                <Table.Cell key={cell.id}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</Table.Cell>
-              ))}
+          {data.length === 0 ? (
+            <Table.Row>
+              <Table.Cell
+                py={6}
+                colSpan={columns.length + 1}
+                textAlign="center"
+                justifyItems="center">
+                {emptyStateElement}
+              </Table.Cell>
             </Table.Row>
-          ))}
+          ) : (
+            table.getRowModel().rows.map((row) => (
+              <Table.Row key={row.id}>
+                {row.getVisibleCells().map((cell) => (
+                  <Table.Cell key={cell.id}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</Table.Cell>
+                ))}
+              </Table.Row>
+            ))
+          )}
         </Table.Body>
       </Table.Root>
       <Pagination.Root

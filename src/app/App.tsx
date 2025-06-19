@@ -1,31 +1,28 @@
-import { Text } from '@chakra-ui/react';
-import { useState } from 'react';
-import { InputForm, MeowButton } from '../common/ui';
-import { Modal } from '../common/ui/patterns/Modal/Modal';
+import { ExpenseTrackerTablePage } from '@/modules';
+import { Image, Stack } from '@chakra-ui/react';
 
 function App() {
-  const [open, setOpen] = useState(false);
   return (
-    <>
-      <Text>Hehsyruthsyutnrysoun</Text>
-      <MeowButton
-        label="Click me"
-        onClick={() => setOpen(true)}
+    <Stack
+      w="100vw"
+      h="100vh"
+      gap={0}
+      px={8}
+      py={4}>
+      <Image
+        src="/purrse-logo.png"
+        alt="logo"
+        w="fit-content"
+        objectFit="contain"
+        h="64px"
       />
-      <InputForm
-        label="Email"
-        placeholder="me@example.com"
-        value=""
-        onChange={() => {}}
-        isRequired
-      />
-      <Modal
-        open={open}
-        setOpen={setOpen}
-        title="Modal">
-        <Text>Modal</Text>
-      </Modal>
-    </>
+      <Stack
+        w="100%"
+        h="100%"
+        p={4}>
+        <ExpenseTrackerTablePage />
+      </Stack>
+    </Stack>
   );
 }
 

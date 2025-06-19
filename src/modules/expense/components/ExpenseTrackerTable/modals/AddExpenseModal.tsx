@@ -30,6 +30,10 @@ export const AddExpenseModal = ({ open, setOpen }: { open: boolean; setOpen: (op
     } else {
       setCatFact('');
     }
+
+    return () => {
+      setCatFact('');
+    };
   }, [open]);
 
   function handleSubmit() {

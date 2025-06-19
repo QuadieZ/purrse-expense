@@ -1,5 +1,6 @@
 import { MeowButton, toaster } from '@/common/ui';
 import { Flex } from '@chakra-ui/react';
+import { Plus, Trash } from 'lucide-react';
 import { useState } from 'react';
 import { useExpenseStore } from '../../stores/expenseStore';
 import { AddExpenseModal, ConfirmDeleteModal } from './modals';
@@ -28,12 +29,15 @@ export const ExpenseTrackerTableActions = () => {
         flexWrap="wrap"
         gap={[2, 4]}>
         <MeowButton
+          icon={<Plus />}
           label="Add Expense"
           onClick={() => setIsAddExpenseModalOpen(true)}
         />
         <MeowButton
+          icon={<Trash />}
+          bg="white"
           label="Delete Expense"
-          variant="destructive"
+          variant="secondaryOutline"
           onClick={handleDeleteExpenses}
         />
         {/* <MeowButton

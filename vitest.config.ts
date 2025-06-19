@@ -17,7 +17,7 @@ export default defineConfig({
         exclude: ['src/e2e/**/*.spec.ts'],
         coverage: {
             provider: 'v8',
-            include: ['src/common/ui/**/*.tsx'],
+            include: ['src/common/ui/**/*.tsx', 'src/common/utils/**/*.ts'],
             exclude: ['src/common/ui/**/*.stories.tsx'],
             all: true,
             reporter: ['text', 'json', 'html'],

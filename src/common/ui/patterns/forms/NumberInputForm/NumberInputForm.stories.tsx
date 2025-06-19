@@ -3,7 +3,7 @@ import { NumberInputForm } from './NumberInputForm';
 
 const meta: Meta<typeof NumberInputForm> = {
   component: NumberInputForm,
-  title: 'MeowKit/NumberInputForm',
+  title: 'MeowKit/Patterns/NumberInputForm',
   args: {
     label: 'Amount',
   },

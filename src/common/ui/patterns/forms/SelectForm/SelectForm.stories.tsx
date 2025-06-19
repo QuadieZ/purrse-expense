@@ -3,7 +3,7 @@ import { SelectForm } from './SelectForm';
 
 const meta: Meta<typeof SelectForm> = {
   component: SelectForm,
-  title: 'MeowKit/SelectForm',
+  title: 'MeowKit/Patterns/SelectForm',
   args: {
     label: 'Select',
     options: [

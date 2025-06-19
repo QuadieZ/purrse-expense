@@ -3,7 +3,7 @@ import { Typography } from './Typography';
 
 const meta: Meta<typeof Typography> = {
   component: Typography,
-  title: 'MeowKit/Typography',
+  title: 'MeowKit/Components/Typography',
   parameters: {
     docs: {
       description: {

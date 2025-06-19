@@ -3,7 +3,7 @@ import { InputForm } from './InputForm';
 
 const meta: Meta<typeof InputForm> = {
   component: InputForm,
-  title: 'MeowKit/InputForm',
+  title: 'MeowKit/Patterns/InputForm',
   args: {
     label: 'Email',
     placeholder: 'me@example.com',

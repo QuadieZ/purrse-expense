@@ -4,7 +4,7 @@ import { MeowButton } from './MeowButton';
 
 const meta: Meta<typeof MeowButton> = {
   component: MeowButton,
-  title: 'MeowKit/MeowButton',
+  title: 'MeowKit/Components/MeowButton',
   args: {
     label: 'Button',
   },

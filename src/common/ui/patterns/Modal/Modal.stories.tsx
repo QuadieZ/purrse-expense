@@ -4,7 +4,7 @@ import { Modal } from './Modal';
 
 const meta: Meta<typeof Modal> = {
   component: Modal,
-  title: 'MeowKit/Modal',
+  title: 'MeowKit/Patterns/Modal',
   args: {
     title: 'Modal',
     triggerElement: (

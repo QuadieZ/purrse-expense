@@ -46,7 +46,7 @@ const columns: ColumnDef<Person>[] = [
 ];
 
 const meta: Meta<typeof DataTable<Person>> = {
-  title: 'UI/Patterns/DataTable',
+  title: 'MeowKit/Patterns/DataTable',
   component: DataTable,
   parameters: {
     layout: 'padded',

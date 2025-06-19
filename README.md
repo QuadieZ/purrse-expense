@@ -18,6 +18,7 @@ Task Breakdown & Planning: [Link](https://pichyapakh.notion.site/Cat-Expense-Web
 - **Row Selection**: Multi-select rows for bulk delete
 - **Responsive Design**: (Should) Works seamlessly on desktop, tablet, and mobile
 - **Offline Support**: Fallback data when network is unavailable
+- **Persistent Storage**: Uses localstorage to persist data
 - **Cats Facts**: Meow
 
 ### Developer Experience

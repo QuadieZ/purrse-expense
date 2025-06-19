@@ -21,6 +21,7 @@
     "@fontsource-variable/quicksand": "^5.2.8",
     "@storybook/addon-themes": "^9.0.12",
     "@tanstack/react-table": "^8.21.3",
+    "@vercel/speed-insights": "^1.2.0",
     "lucide-react": "^0.517.0",
     "path": "^0.12.7",
     "prettier": "^3.5.3",

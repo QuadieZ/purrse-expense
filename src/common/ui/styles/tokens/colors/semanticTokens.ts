@@ -25,7 +25,16 @@ export const semanticColorTokens = defineTokens({
             contrast: { value: "{colors.brand.50}" },
             fg: { value: "{colors.brand.500}" },
             muted: { value: "{colors.brand.100}" },
-            subtle: { value: "{colors.brand.200}" },
+            subtle: { value: "{colors.brand.100}" },
+            emphasized: { value: "{colors.accent.500}" },
+            focusRing: { value: "{colors.accent.500}" },
+        },
+        accentPalette: {
+            solid: { value: "{colors.accent.500}" },
+            contrast: { value: "{colors.accent.50}" },
+            fg: { value: "{colors.accent.500}" },
+            muted: { value: "{colors.accent.100}" },
+            subtle: { value: "{colors.accent.100}" },
             emphasized: { value: "{colors.accent.500}" },
             focusRing: { value: "{colors.accent.500}" },
         }

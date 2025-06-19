@@ -3,7 +3,9 @@
 A modern, responsive expense tracking application built with React, TypeScript, and Chakra UI. Purrse helps you manage your finances with a delightful cat-themed interface.
 
 Production: [Link](https://purrse-expense.vercel.app/)
+
 Storybook Production: [Link](https://meowkit-storybook.vercel.app/?path=/docs/meowkit-components-meowbutton--docs)
+
 Task Breakdown & Planning: [Link](https://pichyapakh.notion.site/Cat-Expense-Web-21502ebb6c628020a4bbc1c9ddef73fa?source=copy_link)
 
 ## 🚀 Functionalities
@@ -159,7 +161,8 @@ pnpm storybook
 pnpm typegen:ui
 ```
 
---
+------
 
 Made with ❤️ and 🐱 
+
 No cats were harmed during the development of this website.

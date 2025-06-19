@@ -1,4 +1,4 @@
-import { InputForm, MeowButton, Modal, NumberInputForm, SelectForm, Typography } from '@/common/ui';
+import { InputForm, MeowButton, Modal, NumberInputForm, SelectForm, toaster, Typography } from '@/common/ui';
 import { getCatFact } from '@/common/utils/getCatFact';
 import { Stack } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
@@ -58,6 +58,11 @@ export const AddExpenseModal = ({ open, setOpen }: { open: boolean; setOpen: (op
 
     if (isNameValid && isAmountValid && isCategoryValid) {
       addExpense({ name, amount, category: category[0], id: uuidv4() });
+      toaster.create({
+        title: 'Expense Added',
+        description: 'Expense added successfully',
+        type: 'success',
+      });
       setOpen(false);
     }
   }

@@ -68,7 +68,9 @@ export const DataTable = <T extends { id: string }>(props: DataTableProps<T>) =>
         boxSizing="border-box"
         borderColor="white"
         color="white"
-        checked={table.getIsAllRowsSelected() ? true : table.getIsSomeRowsSelected() ? 'indeterminate' : false}
+        checked={
+          table.getIsAllRowsSelected() ? true : table.getSelectedRowModel().rows.length > 0 ? 'indeterminate' : false
+        }
         onChange={table.getToggleAllRowsSelectedHandler()}>
         <Checkbox.HiddenInput />
         <Checkbox.Control />

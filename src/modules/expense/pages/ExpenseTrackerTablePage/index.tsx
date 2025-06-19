@@ -7,8 +7,9 @@ import { EXPENSE_LABELS, type ExpenseItem } from '../../types';
 import { expenseColumns } from './columnDef';
 
 export const ExpenseTrackerTablePage = () => {
-  const { expenses } = useExpenseStore();
+  const { expenses, setSelectedExpenses, selectedExpenses } = useExpenseStore();
 
+  console.log(selectedExpenses);
   return (
     <Stack
       px={16}
@@ -26,7 +27,9 @@ export const ExpenseTrackerTablePage = () => {
               category: EXPENSE_LABELS[expense.category],
             })) as ExpenseItem[]
           }
-          setSelectedRows={() => {}}
+          setSelectedRows={(rows) => {
+            setSelectedExpenses(rows.map((row) => row.id));
+          }}
           emptyStateElement={<EmptyStateElement />}
         />
       </Stack>

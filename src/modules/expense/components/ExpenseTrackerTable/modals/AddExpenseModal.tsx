@@ -1,10 +1,10 @@
 import { InputForm, MeowButton, Modal, NumberInputForm, SelectForm, Typography } from '@/common/ui';
+import { getCatFact } from '@/common/utils/getCatFact';
 import { Stack } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { getCatFact } from '../../../../common/utils/getCatFact';
-import { useExpenseStore } from '../../stores/expenseStore';
-import { EXPENSE_OPTIONS, type Expense } from '../../types';
+import { useExpenseStore } from '../../../stores/expenseStore';
+import { EXPENSE_OPTIONS, type Expense } from '../../../types';
 
 export const AddExpenseModal = ({ open, setOpen }: { open: boolean; setOpen: (open: boolean) => void }) => {
   const { addExpense } = useExpenseStore();

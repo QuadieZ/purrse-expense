@@ -125,7 +125,7 @@ export const DataTable = <T extends { id: string }>(props: DataTableProps<T>) =>
       <InputGroup
         startElement={<Search size="14px" />}
         endElement={endElement}
-        w="25%"
+        w={['100%', '50%']}
         colorPalette="brandPalette">
         <Input
           bg="white"

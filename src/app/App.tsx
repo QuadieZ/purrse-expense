@@ -8,7 +8,7 @@ function App() {
       maxH="100vh"
       h="100vh"
       gap={0}
-      px={8}
+      px={[6, 8]}
       py={4}>
       <Image
         src="/purrse-logo.png"
@@ -21,6 +21,7 @@ function App() {
         w="100%"
         overflow="hidden"
         flex={1}
+        px={[2, 4, 16]}
         pb={4}>
         <ExpenseTrackerTablePage />
       </Stack>

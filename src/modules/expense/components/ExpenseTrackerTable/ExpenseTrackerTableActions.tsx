@@ -2,14 +2,13 @@ import { MeowButton, toaster } from '@/common/ui';
 import { Flex } from '@chakra-ui/react';
 import { useState } from 'react';
 import { useExpenseStore } from '../../stores/expenseStore';
-import { mockExpenses } from './mock';
 import { AddExpenseModal, ConfirmDeleteModal } from './modals';
 
 export const ExpenseTrackerTableActions = () => {
   const [isAddExpenseModalOpen, setIsAddExpenseModalOpen] = useState(false);
   const [isConfirmDeleteModalOpen, setIsConfirmDeleteModalOpen] = useState(false);
 
-  const { deleteSelectedExpenses, setExpenses, selectedExpenses } = useExpenseStore();
+  const { deleteSelectedExpenses, selectedExpenses } = useExpenseStore();
 
   function handleDeleteExpenses() {
     if (selectedExpenses.length > 0) {
@@ -27,7 +26,7 @@ export const ExpenseTrackerTableActions = () => {
     <>
       <Flex
         flexWrap="wrap"
-        gap={4}>
+        gap={[2, 4]}>
         <MeowButton
           label="Add Expense"
           onClick={() => setIsAddExpenseModalOpen(true)}
@@ -37,15 +36,10 @@ export const ExpenseTrackerTableActions = () => {
           variant="destructive"
           onClick={handleDeleteExpenses}
         />
-        <MeowButton
+        {/* <MeowButton
           label="Duplicate Expense"
           variant="secondaryOutline"
-        />
-        <MeowButton
-          label="Testing Expense"
-          variant="secondaryOutline"
-          onClick={() => setExpenses(mockExpenses)}
-        />
+        /> */}
       </Flex>
       <AddExpenseModal
         open={isAddExpenseModalOpen}

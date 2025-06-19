@@ -91,7 +91,7 @@ export const AddExpenseModal = ({ open, setOpen }: { open: boolean; setOpen: (op
             placeholder="Cat's paw"
             value={name}
             onChange={(value) => setName(value)}
-            size="sm"
+            size={['xs', 'sm']}
             labelWidth="100px"
             errorMessage={nameError}
           />
@@ -100,7 +100,7 @@ export const AddExpenseModal = ({ open, setOpen }: { open: boolean; setOpen: (op
             label="Amount:"
             value={amount}
             onChange={(value: number) => setAmount(value)}
-            size="sm"
+            size={['xs', 'sm']}
             labelWidth="100px"
             errorMessage={amountError}
           />
@@ -111,7 +111,7 @@ export const AddExpenseModal = ({ open, setOpen }: { open: boolean; setOpen: (op
             value={category}
             onChange={(value: string[]) => setCategory(value as Expense[])}
             options={EXPENSE_OPTIONS}
-            size="sm"
+            size={['xs', 'sm']}
             labelWidth="100px"
             errorMessage={categoryError}
             isModal

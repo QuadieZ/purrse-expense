@@ -105,6 +105,7 @@ export const MeowButton = (props: MeowButtonProps) => {
       focusRingColor="brandPalette.focusRing"
       fontWeight="semibold"
       transition="all 0.2s ease-in-out"
+      size={['xs', 'sm', 'md']}
       _hover={
         enableHoverAnimation
           ? {

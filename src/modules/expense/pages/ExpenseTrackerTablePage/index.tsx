@@ -6,12 +6,10 @@ import { useExpenseStore } from '../../stores/expenseStore';
 import { expenseColumns } from './columnDef';
 
 export const ExpenseTrackerTablePage = () => {
-  const { expenses, setSelectedExpenses, selectedExpenses, isMostSpentCategory } = useExpenseStore();
+  const { expenses, setSelectedExpenses, isMostSpentCategory } = useExpenseStore();
 
-  console.log(selectedExpenses);
   return (
     <Stack
-      px={16}
       gap={8}
       overflow="hidden"
       flex={1}>

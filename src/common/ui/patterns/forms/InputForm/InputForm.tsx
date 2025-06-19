@@ -29,7 +29,7 @@ export const InputForm = (props: InputFormProps) => {
         {label && (
           <Field.Label
             mt={2}
-            fontSize="md"
+            fontSize={['sm', 'md']}
             w={labelWidth ?? 'fit-content'}>
             {label} {isRequired && <Field.RequiredIndicator />}
           </Field.Label>

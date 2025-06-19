@@ -23,7 +23,7 @@ export const NumberInputForm = (props: NumberInputFormProps) => {
         alignItems="flex-start">
         <Field.Label
           mt={2}
-          fontSize="md"
+          fontSize={['sm', 'md']}
           w={labelWidth ?? 'fit-content'}>
           {label} {isRequired && <Field.RequiredIndicator />}
         </Field.Label>
